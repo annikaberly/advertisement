@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ocean at the End of the Lane</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    /* Ocean and Sky */
+    .sky {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 50%;
+      background: radial-gradient(circle, #1e3b75, #000);
+    }
+
+    .stars {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      animation: twinkle 3s infinite alternate ease-in-out;
+    }
+
+    .stars::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
+
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+
+    .ocean {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to bottom, #1e90ff, #000);
+      overflow: hidden;
+    }
+
+    .wave {
+      position: absolute;
+      width: 200%;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: wave 5s infinite ease-in-out;
+    }
+
+    .wave:nth-child(1) {
+      top: 30px;
+      left: -50%;
+      animation-delay: 0s;
+    }
+
+    .wave:nth-child(2) {
+      top: 60px;
+      left: -60%;
+      animation-delay: 2s;
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(0) translateY(10px); }
+      50% { transform: translateX(-25%) translateY(-10px); }
+      100% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    /* Text Animation */
+    .text {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5em;
+      text-align: center;
+      line-height: 1.5;
+      animation: fadeText 10s infinite;
+    }
+
+    @keyframes fadeText {
+      0%, 20% { opacity: 0; }
+      30%, 70% { opacity: 1; }
+      80%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky">
+    <div class="stars"></div>
+  </div>
+  <div class="ocean">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+  <div class="text">
+    <div>The Ocean At The End Of The Lane</div>
+    <div> A Novel by Neil Gaiman</div>
+  </div>
+</body>
+</html>

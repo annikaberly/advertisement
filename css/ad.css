@@ -1,0 +1,7 @@
+/*Container Items*/
+.cover {
+	width: 100vw;
+	bottom: 100vh;
+	background: url("../images/image.jpeg") no-repeat fixed;
+	background-size: cover;
+}
